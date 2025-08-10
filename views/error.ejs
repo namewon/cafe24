@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>오류 발생</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; background-color: #f8d7da; color: #721c24; }
+        .container { max-width: 800px; margin: auto; background-color: #f5c6cb; padding: 20px; border: 1px solid #f1b0b7; border-radius: 8px; }
+        h1 { color: #721c24; }
+        pre { background-color: #f9e2e4; padding: 15px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
+        a { color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>앗, 오류가 발생했습니다!</h1>
+        <p>요청을 처리하는 중 문제가 발생했습니다. 관리자에게 문의해주세요.</p>
+        
+        <% if (error) { %>
+            <h2>오류 메시지:</h2>
+            <p><%= error.message %></p>
+            
+            <% if (error.stack) { %>
+                <h3>Stack Trace:</h3>
+                <pre><code><%= error.stack %></code></pre>
+            <% } %>
+        <% } %>
+        
+        <hr>
+        <p><a href="/">홈으로 돌아가기</a></p>
+    </div>
+</body>
+</html>
